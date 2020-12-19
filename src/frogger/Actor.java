@@ -1,8 +1,7 @@
-package p4_group_8_repo;
+package frogger;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.input.InputEvent;
-
 import java.util.ArrayList;
 
 
@@ -44,7 +43,6 @@ public abstract class Actor extends ImageView{
         for (A actor: getWorld().getObjects(cls)) {
             if (actor != this && actor.intersects(this.getBoundsInLocal())) {
                 someArray.add(actor);
-                break;
             }
         }
         return someArray.get(0);

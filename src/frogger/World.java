@@ -1,4 +1,4 @@
-package p4_group_8_repo;
+package frogger;
 
 
 import java.util.ArrayList;
@@ -70,11 +70,11 @@ public abstract class World extends Pane {
             public void handle(long now) {
                 act(now);
                 List<Actor> actors = getObjects(Actor.class);
-                
+
                 for (Actor anActor: actors) {
                 	anActor.act(now);
                 }
-      
+
             }
         };
     }

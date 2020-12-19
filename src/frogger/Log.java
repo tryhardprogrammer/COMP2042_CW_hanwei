@@ -1,4 +1,4 @@
-package p4_group_8_repo;
+package frogger;
 
 import javafx.scene.image.Image;
 
