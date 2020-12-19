@@ -6,6 +6,8 @@ public class Obstacle extends Actor {
 
 	private int speed;
 
+
+
 	@Override
 	public void act(long now) {
 		move(speed , 0);
