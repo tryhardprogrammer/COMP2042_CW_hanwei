@@ -4,19 +4,37 @@ import javafx.scene.image.Image;
 
 public class WetTurtle extends MovingObjects {
 
+	/**size of the object*/
 	private int size = 130;
+
+	/**indicates blinking state of the turtle*/
 	private boolean sunk = false;
 
+	/**image of the object*/
 	private Image turtle1 = new Image("file:src/resources/pictures/turtle/TurtleAnimation1.png", size, size, true, true);
+	/**image of the object*/
 	private Image turtle2 = new Image("file:src/resources/pictures/turtle/TurtleAnimation2Wet.png", size, size, true, true);
+	/**image of the object*/
 	private Image turtle3 = new Image("file:src/resources/pictures/turtle/TurtleAnimation3Wet.png", size, size, true, true);
+	/**image of the object*/
 	private Image turtle4 = new Image("file:src/resources/pictures/turtle/TurtleAnimation4Wet.png", size, size, true, true);
 
+
+	/**Constructor for vehicle
+	 * @param xpos x-coordinate for the object for its starting point
+	 * @param ypos y-coordinate for the object for its starting point
+	 * @param s speed of the object
+	 * */
 	public WetTurtle(int xpos, int ypos, int s) {
 		super(xpos, ypos, s);
 		setImage(getTurtle2());
 	}
 
+	/**Method from parent abstract class
+	 * control blinking the turtle
+	 * react if object is out of bound
+	 * @param now time
+	 */
 	@Override
 	public void act(long now) {
 
@@ -45,7 +63,9 @@ public class WetTurtle extends MovingObjects {
 	}
 
 
-
+	/**Checks current state of blinking of the turtles
+	 * @return state of blinking
+	 */
 	public boolean getSunk() {
 		return sunk;
 	}

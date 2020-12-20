@@ -4,17 +4,32 @@ import javafx.scene.image.Image;
 
 public class Turtle extends MovingObjects{
 
+	/**size of turtle*/
 	private int size = 130;
 
+	/**image of the object*/
 	private Image turtle1 = new Image("file:src/resources/pictures/turtle/TurtleAnimation1.png", size, size, true, true);
+	/**image of the object*/
 	private Image turtle2 = new Image("file:src/resources/pictures/turtle/TurtleAnimation2.png", size, size, true, true);
+	/**image of the object*/
 	private Image turtle3 = new Image("file:src/resources/pictures/turtle/TurtleAnimation3.png", size, size, true, true);
 
+
+	/**Constructor for vehicle
+	 * @param xpos x-coordinate for the object for its starting point
+	 * @param ypos y-coordinate for the object for its starting point
+	 * @param s speed of the object
+	 * */
 	public Turtle(int xpos, int ypos, int s) {
 		super(xpos,ypos, s);
 		setImage(getTurtle2());
 	}
 
+	/**Method from parent abstract class
+	 * animation of object
+	 * react if object is out of bound
+	 * @param now time
+	 */
 	@Override
 	public void act(long now) {
 
