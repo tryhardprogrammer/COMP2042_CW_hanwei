@@ -48,6 +48,8 @@ public abstract class Actor extends ImageView{
         return someArray.get(0);
     }
 
+
     public abstract void act(long now);
+
 
 }

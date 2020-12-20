@@ -2,26 +2,31 @@ package frogger;
 
 import javafx.scene.image.Image;
 
-public class Log extends Actor {
+/**Creates Log where the Animal object can stand on */
+public class Log extends MovingObjects {
 
-	private double speed;
+	public Log(String imageLink, int size, int xpos, int ypos, double s) {
+		super(xpos, ypos, s);
+		setImage(new Image(imageLink, size,size, true, true));
+	}
+
+	/**
+	 * Method to set the speed and direction (speed > 0 is right, speed < 0 is left) of log
+	 * @param now time
+	 */
 	@Override
 	public void act(long now) {
-		move(speed , 0);
-		if (getX()>600 && speed>0)
+		move(getSpeed() , 0);
+		if (getX()>600 && getSpeed()>0)
 			setX(-180);
-		if (getX()<-300 && speed<0)
+		if (getX()<-300 && getSpeed()<0)
 			setX(700);
 	}
 	
-	public Log(String imageLink, int size, int xpos, int ypos, double s) {
-		setImage(new Image(imageLink, size,size, true, true));
-		setX(xpos);
-		setY(ypos);
-		speed = s;
-		
-	}
+
 	public boolean getLeft() {
-		return speed < 0;
+		return getSpeed() < 0;
 	}
+
+
 }

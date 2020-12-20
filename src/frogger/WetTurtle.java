@@ -2,32 +2,38 @@ package frogger;
 
 import javafx.scene.image.Image;
 
-public class WetTurtle extends Actor {
-	Image turtle1;
-	Image turtle2;
-	Image turtle3;
-	Image turtle4;
-	private int speed;
-	int i = 1;
-	boolean bool = true;
-	boolean sunk = false;
+public class WetTurtle extends MovingObjects {
+
+	private int size = 130;
+	private boolean sunk = false;
+
+	private Image turtle1 = new Image("file:src/resources/pictures/turtle/TurtleAnimation1.png", size, size, true, true);
+	private Image turtle2 = new Image("file:src/resources/pictures/turtle/TurtleAnimation2Wet.png", size, size, true, true);
+	private Image turtle3 = new Image("file:src/resources/pictures/turtle/TurtleAnimation3Wet.png", size, size, true, true);
+	private Image turtle4 = new Image("file:src/resources/pictures/turtle/TurtleAnimation4Wet.png", size, size, true, true);
+
+	public WetTurtle(int xpos, int ypos, int s) {
+		super(xpos, ypos, s);
+		setImage(getTurtle2());
+	}
+
 	@Override
 	public void act(long now) {
 
 				if (now/900000000  % 4 ==0) {
-					setImage(turtle2);
+					setImage(getTurtle2());
 					sunk = false;
 					
 				}
 				else if (now/900000000 % 4 == 1) {
-					setImage(turtle1);
+					setImage(getTurtle1());
 					sunk = false;
 				}
 				else if (now/900000000 %4 == 2) {
-					setImage(turtle3);
+					setImage(getTurtle3());
 					sunk = false;
 				} else if (now/900000000 %4 == 3) {
-					setImage(turtle4);
+					setImage(getTurtle4());
 					sunk = true;
 				}
 			
@@ -37,17 +43,26 @@ public class WetTurtle extends Actor {
 		if (getX() < -75 && speed<0)
 			setX(600);
 	}
-	public WetTurtle(int xpos, int ypos, int s, int w, int h) {
-		turtle1 = new Image("file:src/resources/pictures/turtle/TurtleAnimation1.png", w, h, true, true);
-		turtle2 = new Image("file:src/resources/pictures/turtle/TurtleAnimation2Wet.png", w, h, true, true);
-		turtle3 = new Image("file:src/resources/pictures/turtle/TurtleAnimation3Wet.png", w, h, true, true);
-		turtle4 = new Image("file:src/resources/pictures/turtle/TurtleAnimation4Wet.png", w, h, true, true);
-		setX(xpos);
-		setY(ypos);
-		speed = s;
-		setImage(turtle2);
-	}
-	public boolean isSunk() {
+
+
+
+	public boolean getSunk() {
 		return sunk;
+	}
+
+	public Image getTurtle1() {
+		return turtle1;
+	}
+
+	public Image getTurtle2() {
+		return turtle2;
+	}
+
+	public Image getTurtle3() {
+		return turtle3;
+	}
+
+	public Image getTurtle4() {
+		return turtle4;
 	}
 }

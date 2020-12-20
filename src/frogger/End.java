@@ -34,7 +34,7 @@ public class End extends Actor{
 		activated = false;
 	}
 
-	/**Checks the boolean value of variable activated
+	/**Checks state of End
 	 * @return the state of End object
 	 */
 	public boolean getActivated() {

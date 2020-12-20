@@ -2,42 +2,52 @@ package frogger;
 
 import javafx.scene.image.Image;
 
-public class Turtle extends Actor{
-	Image turtle1;
-	Image turtle2;
-	Image turtle3;
-	private int speed;
-	int i = 1;
-	boolean bool = true;
+public class Turtle extends MovingObjects{
+
+	private int size = 130;
+
+	private Image turtle1 = new Image("file:src/resources/pictures/turtle/TurtleAnimation1.png", size, size, true, true);
+	private Image turtle2 = new Image("file:src/resources/pictures/turtle/TurtleAnimation2.png", size, size, true, true);
+	private Image turtle3 = new Image("file:src/resources/pictures/turtle/TurtleAnimation3.png", size, size, true, true);
+
+	public Turtle(int xpos, int ypos, int s) {
+		super(xpos,ypos, s);
+		setImage(getTurtle2());
+	}
+
 	@Override
 	public void act(long now) {
 
 				if (now/900000000  % 3 ==0) {
-					setImage(turtle2);
+					setImage(getTurtle2());
 					
 				}
 				else if (now/900000000 % 3 == 1) {
-					setImage(turtle1);
+					setImage(getTurtle1());
 					
 				}
 				else if (now/900000000 %3 == 2) {
-					setImage(turtle3);
+					setImage(getTurtle3());
 					
 				}
 			
-		move(speed , 0);
-		if (getX() > 600 && speed>0)
+		move(getSpeed() , 0);
+		if (getX() > 600 && getSpeed()>0)
 			setX(-200);
-		if (getX() < -75 && speed<0)
+		if (getX() < -75 && getSpeed()<0)
 			setX(600);
 	}
-	public Turtle(int xpos, int ypos, int s, int w, int h) {
-		turtle1 = new Image("file:src/resources/pictures/turtle/TurtleAnimation1.png", w, h, true, true);
-		turtle2 = new Image("file:src/resources/pictures/turtle/TurtleAnimation2.png", w, h, true, true);
-		turtle3 = new Image("file:src/resources/pictures/turtle/TurtleAnimation3.png", w, h, true, true);
-		setX(xpos);
-		setY(ypos);
-		speed = s;
-		setImage(turtle2);
+
+
+	public Image getTurtle1() {
+		return turtle1;
+	}
+
+	public Image getTurtle2() {
+		return turtle2;
+	}
+
+	public Image getTurtle3() {
+		return turtle3;
 	}
 }
