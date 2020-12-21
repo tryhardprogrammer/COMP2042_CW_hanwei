@@ -25,7 +25,7 @@ public class WetTurtle extends MovingObjects {
 	 * @param ypos y-coordinate for the object for its starting point
 	 * @param s speed of the object
 	 * */
-	public WetTurtle(int xpos, int ypos, int s) {
+	public WetTurtle(int xpos, int ypos, double s) {
 		super(xpos, ypos, s);
 		setImage(getTurtle2());
 	}

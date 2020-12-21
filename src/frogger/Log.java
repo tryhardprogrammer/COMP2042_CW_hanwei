@@ -6,15 +6,15 @@ import javafx.scene.image.Image;
 public class Log extends MovingObjects {
 
 	/**Constructor for vehicle
-	 * @param imageLink image directory for the object
+	 * @param choice to decide the desired image directory for the object
 	 * @param size width and height of the object
 	 * @param xpos x-coordinate for the object for its starting point
 	 * @param ypos y-coordinate for the object for its starting point
 	 * @param s speed of the object
 	 */
-	public Log(String imageLink, int size, int xpos, int ypos, double s) {
+	public Log(int choice, int size, int xpos, int ypos, double s) {
 		super(xpos, ypos, s);
-		setImage(new Image(imageLink, size,size, true, true));
+		setImage(new Image("file:src/resources/pictures/log/log"+choice+".png", size,size, true, true));
 	}
 
 	/**

@@ -21,11 +21,11 @@ public class Digit extends Actor{
 	 * @param x x-coordinate for the placing of Digit
 	 * @param y y-coordinate for the placing of Digit
 	 */
-	public Digit(int n, int x, int y) {
+	public Digit(int n, int xpos, int ypos) {
 		imageScore = new Image("file:src/resources/pictures/digit/"+n+".png", sizeImageScore, sizeImageScore, true, true);
 		setImage(imageScore);
-		setX(x);
-		setY(y);
+		setX(xpos);
+		setY(ypos);
 	}
 	
 }

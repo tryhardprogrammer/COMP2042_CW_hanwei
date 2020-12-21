@@ -12,8 +12,8 @@ public class BackgroundImage extends Actor{
 	/**Sets background image
 	 * @param imageLink the directory for the image
 	 */
-	public BackgroundImage(String imageLink) {
-		setImage(new Image(imageLink, 600, 800, false, true));
+	public BackgroundImage(int choice) {
+		setImage(new Image("file:src/resources/pictures/background/"+choice+".png", 600, 800, false, true));
 	}
 
 }
