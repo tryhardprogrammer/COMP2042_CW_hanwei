@@ -41,9 +41,7 @@ public class Level5 extends Levels{
         add(new Vehicle(2,2, 850, 649, 1*speedup));
         add(new Vehicle(1,1, 200, 490, -5*speedup));
         add(new Vehicle(1,1, 600, 490, -5*speedup));
-        add(new Digit(0, 560, 25));
-
-        start();
+        addButton();
     }
 
     /**get animal actor

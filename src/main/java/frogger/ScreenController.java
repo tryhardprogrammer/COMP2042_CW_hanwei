@@ -6,6 +6,7 @@ import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
 
 import java.util.Optional;
+import java.util.logging.Level;
 
 /**Controllers that controls which view to show*/
 public class ScreenController {
@@ -38,8 +39,8 @@ public class ScreenController {
 
     /**Sets Game View*/
     public void GameScreen() {
-        LevelController levelController = new LevelController(stage);
-        levelController.initLevel(1 );
+        LevelController.getInstance().setStage(stage);
+        LevelController.getInstance().initLevel(1);
     }
 
     /**Sets get name dialog*/
@@ -52,10 +53,11 @@ public class ScreenController {
         Optional<String> result = dialog.showAndWait();
         if (result.isPresent()){
             HighScore.getInstance().setNameEntered(result.get());
-            System.out.println("Your name: " + result.get());
+            System.out.println("Player name: " + result.get());
         }
         else{
-            System.out.println("No entered");
+            System.out.println("Name not entered. Setting player name to 'Player'...");
+            HighScore.getInstance().setNameEntered("Player");
         }
     }
 
@@ -72,7 +74,7 @@ public class ScreenController {
         stage.setScene(scene);
     }
 
-    /**sets stage to the application stage
+    /**sets stage from the application stage
      * @param stage the application stage
      */
     public void setStage(Stage stage) {
@@ -80,7 +82,7 @@ public class ScreenController {
     }
 
     /**
-     * Prevents other classes to initialize this class to acheive Singleton
+     * Prevents other classes to initialize this class to achieve Singleton
      * @return screenController which is the instance of screenController*/
     public static ScreenController getInstance() {
         if (screenController == null) {

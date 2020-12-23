@@ -27,6 +27,10 @@ public class Button extends Actor{
         {
             setImage(new Image(imageLink,398, 56, true, false ));
         }
+        else if(choice ==3){
+
+            setImage(new Image(imageLink, 40, 40, true, true));
+        }
 
         setX(xpos);
         setY(ypos);

@@ -71,23 +71,35 @@ public class HighScore {
         leaderboardString = sb.toString();
     }
 
+    /**
+     * Updates high score in sequence with player's score
+     * @param getscore Player's score
+     */
     public void updateHighScoreFiles(int getscore){
-        System.out.println(nameEntered);
 
-        for(i = 0; i < counter; i++){
-            if(getscore > score[i]){
+        //if leaderboard is not full and the current score is the lowest
+        if(counter < 10 && getscore < lowestScore){
+            score[counter] = getscore;
+            name[counter] = nameEntered;
+        }
+        else{
+            for(i = 0; i < counter; i++) {
+                if (getscore > score[i]) {
 
-                for(j = counter -1; j > i; j--){
-                    score[j+1] = score[j];
-                    name[j+1] = name[j];
+                    for (j = counter - 1; j > i; j--) {
+                        score[j + 1] = score[j];
+                        name[j + 1] = name[j];
+                    }
+
+                    score[i] = getscore;
+                    name[i] = nameEntered;
+                    break;
                 }
 
-                score[i] = getscore;
-                name[i] = nameEntered;
-                break;
             }
         }
-        counter++;
+        lowestScore = score[counter];
+        if(counter < 10) {counter++;}   //prevent counter > 10
 
         writeNameFile();
         writeScoreFile();
@@ -141,9 +153,6 @@ public class HighScore {
             }
             scanner.close();
 
-            System.out.println(counter);
-            for(i =0; i<counter; i++) System.out.println(score[i]);
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -187,8 +196,6 @@ public class HighScore {
                 i++;
             }
             scanner.close();
-
-            for(i =0; i<counter; i++) System.out.println(name[i]);
 
         } catch (IOException e) {
             e.printStackTrace();
