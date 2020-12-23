@@ -10,9 +10,6 @@ import java.io.IOException;
 
 public class Main extends Application {
 
-	Levels lvl1;
-	BackgroundMusic test;
-
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -20,29 +17,16 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 
-		Scene scene  = new Scene(scene,600,800);
 
-		ScreenController screenController = new ScreenController(scene);
-
-		initializeScreens(screenController);
-		screenController.activateScreen("menu");
-
+		ScreenController.getInstance().setStage(primaryStage);
 		primaryStage.setTitle("Frogger!");
-		primaryStage.getIcons().add(new Image("file:src/main/resources/icon-frogger-boxart-96x96.png"));
-
-
-		primaryStage.setScene(scene);
+		primaryStage.getIcons().add(new Image("file:src/resources/pictures/background/logo.png"));
+		ScreenController.getInstance().MenuScreen();
 		primaryStage.show();
 
 
 
-
 	}
 
-	public void initializeScreens(ScreenController screenController) throws IOException {
-		screenController.addScreen("menu", FXMLLoader.load(getClass().getResource( "menu.fxml" )));
-
-
-	}
 
 }

@@ -63,22 +63,18 @@ public abstract class World extends Pane {
 		});
     }
 
-    public abstract void createTimer();
-    //must include partialHandle() method in handle(now)
-	// e.g. : public void createTimer() {
-	//        timer = new AnimationTimer() {
-	//            @Override
-	//            public void handle(long now) {
-	//               	partialHandle(now);
-	//					....
+    public void createTimer() {
+		timer = new AnimationTimer() {
+			@Override
+			public void handle(long now) {
+				act(now);
+				List<Actor> actors = getObjects(Actor.class);
 
-    public void partialHandle(long now) {
-		act(now);
-		List<Actor> actors = getObjects(Actor.class);
-
-		for (Actor anActor: actors) {
-			anActor.act(now);
-		}
+				for (Actor anActor : actors) {
+					anActor.act(now);
+				}
+			};
+		};
 	}
 
     public void start() {

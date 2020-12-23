@@ -22,7 +22,7 @@ public class Animal extends Actor {
 	/**constant size of the character*/
 	private static final int imgSize = 40;
 	/**constant points the player earns when reaching a end zone*/
-	private static final int point = 50;
+	private static final int point = 1;
 	/**constant x-axis of the character's starting position*/
 	private static final double startX = 300;
 	/**constant y-axis of the character's starting position*/
@@ -80,9 +80,9 @@ public class Animal extends Actor {
 				switch(event.getCode()) {
 					case W:
 						if (getY() < getFurthestPoint()) {
-							setChangeScore(true);
 							setFurthestPoint(getY());
-							setCurrentPoint(getCurrentPoint() + 10);
+							setCurrentPoint(getCurrentPoint() + 0);
+							setChangeScore(true);
 						}
 						move(0, -movementY);
 						setImage(getImgW1());
@@ -172,11 +172,11 @@ public class Animal extends Actor {
 			}
 			else {
 				setCurrentPoint(getCurrentPoint() + point);
-				setChangeScore(true);
 				setFurthestPoint(800);
 				getIntersectingObjects(End.class).get(0).activateEnd();
 				setEnd(getEnd() + 1);
 			}
+			setChangeScore(true);
 			resetPos();
 		}
 
@@ -185,47 +185,47 @@ public class Animal extends Actor {
 			setWaterDeath(true);
 		}
 
-		if (isCarDeath()) {
-			setNoMove(true);
-			if ((now)% 11 ==0) {
-				setAnimationCounter(getAnimationCounter() + 1);
-			}
-			if (getAnimationCounter() ==1 || getAnimationCounter() ==2 || getAnimationCounter() ==3) {
-				setImage(new Image("file:src/resources/pictures/death/cardeath"+ getAnimationCounter() +".png", imgSize, imgSize, true, true));
-			}
-			if (getAnimationCounter() == 4) {
-				resetPos();
-				setAnimationCounter(0);
-				if (getCurrentPoint() >50) {
-					setCurrentPoint(getCurrentPoint() - 50);
-					setChangeScore(true);
-				}
-			}
-
-		}
-		if (isWaterDeath()) {
-			setNoMove(true);
-			if ((now)% 11 ==0) {
-				setAnimationCounter(getAnimationCounter() + 1);
-			}
-			if (getAnimationCounter() ==1 || getAnimationCounter() ==2 || getAnimationCounter() ==3 || getAnimationCounter() ==4)  {
-				setImage(new Image("file:src/resources/pictures/death/waterdeath"+ getAnimationCounter() +".png", imgSize,imgSize , true, true));
-			}
-			if (getAnimationCounter() == 5) {
-				resetPos();
-				setAnimationCounter(0);
-				if (getCurrentPoint() >50) {
-					setCurrentPoint(getCurrentPoint() - 50);
-					setChangeScore(true);
-				}
-			}
-		}
+//		if (isCarDeath()) {
+//			setNoMove(true);
+//			if ((now)% 11 ==0) {
+//				setAnimationCounter(getAnimationCounter() + 1);
+//			}
+//			if (getAnimationCounter() ==1 || getAnimationCounter() ==2 || getAnimationCounter() ==3) {
+//				setImage(new Image("file:src/resources/pictures/death/cardeath"+ getAnimationCounter() +".png", imgSize, imgSize, true, true));
+//			}
+//			if (getAnimationCounter() == 4) {
+//				resetPos();
+//				setAnimationCounter(0);
+//				if (getCurrentPoint() >10) {
+//					setCurrentPoint(getCurrentPoint() - 10);
+//					setChangeScore(true);
+//				}
+//			}
+//
+//		}
+//		if (isWaterDeath()) {
+//			setNoMove(true);
+//			if ((now)% 11 ==0) {
+//				setAnimationCounter(getAnimationCounter() + 1);
+//			}
+//			if (getAnimationCounter() ==1 || getAnimationCounter() ==2 || getAnimationCounter() ==3 || getAnimationCounter() ==4)  {
+//				setImage(new Image("file:src/resources/pictures/death/waterdeath"+ getAnimationCounter() +".png", imgSize,imgSize , true, true));
+//			}
+//			if (getAnimationCounter() == 5) {
+//				resetPos();
+//				setAnimationCounter(0);
+//				if (getCurrentPoint() >10) {
+//					setCurrentPoint(getCurrentPoint() - 10);
+//					setChangeScore(true);
+//				}
+//			}
+//		}
 	}
 
 	/**checks if character won
 	 * @return boolean value stating if all Ends are occupied
 	 */
-	public boolean checkWin() {
+	public boolean checkFinished() {
 		return getEnd() == 5;
 	}
 
