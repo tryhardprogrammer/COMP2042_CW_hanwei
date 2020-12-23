@@ -14,10 +14,13 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 
 
-
+/**Parent class of every view (It's like scene in JavaFX)*/
 public abstract class World extends Pane {
-    private AnimationTimer timer;
-    
+
+	/**Timer*/
+	private AnimationTimer timer;
+
+	/**Constructor that add a listener for key events*/
     public World() {
     	
     	sceneProperty().addListener(new ChangeListener<Scene>() {
@@ -63,6 +66,7 @@ public abstract class World extends Pane {
 		});
     }
 
+    /**Creates timer*/
     public void createTimer() {
 		timer = new AnimationTimer() {
 			@Override
@@ -77,23 +81,37 @@ public abstract class World extends Pane {
 		};
 	}
 
+	/**Starts timer*/
     public void start() {
     	createTimer();
         timer.start();
     }
 
+    /**Stops timer*/
     public void stop() {
         timer.stop();
     }
-    
+
+    /**Adds actor(nodes) into the Pane
+	 * @param actor Actor object
+	 */
     public void add(Actor actor) {
         getChildren().add(actor);
     }
 
+	/**Removes actor(nodes) from the Pane
+	 * @param actor Actor object
+	 */
     public void remove(Actor actor) {
         getChildren().remove(actor);
     }
 
+	/**
+	 * Get all Actor objects that's in World object
+	 * @param <A> class that extends Actor class
+	 * @param cls class of the object which is in World object
+	 * @return the Object's classes that intersects with the current Actor object
+	 */
     public <A extends Actor> List<A> getObjects(Class<A> cls) {
         ArrayList<A> someArray = new ArrayList<A>();
         for (Node n: getChildren()) {
@@ -104,5 +122,8 @@ public abstract class World extends Pane {
         return someArray;
     }
 
+    /**Abstract class for children class to implement
+	 * @param now time
+	 */
     public abstract void act(long now);
 }

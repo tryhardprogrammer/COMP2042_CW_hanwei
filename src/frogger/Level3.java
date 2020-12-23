@@ -1,11 +1,14 @@
 package frogger;
 
+/**Add all essential actors into level3*/
 public class Level3 extends Levels{
 
-
+    /**speed of the actors*/
     private double speedup = 1.3;
+    /**animal of the current level*/
     private Animal animal;
 
+    /**Constructor that adds all actors into Scene*/
     public Level3() {
 
         getChildren().clear();
@@ -48,12 +51,16 @@ public class Level3 extends Levels{
         start();
     };
 
-
-
+    /**get animal actor
+     * @return animal actor
+     */
     public Animal getAnimal(){
         return animal;
     }
 
+    /**set animal actor
+     * @param animal the animal actor
+     */
     public void setAnimal(Animal animal){
         this.animal = animal;
     }

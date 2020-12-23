@@ -5,7 +5,9 @@ import javafx.scene.image.Image;
 /**Sets background image*/
 public class BackgroundImage extends Actor{
 
-	/**Empty method inherited from abstract class Actor*/
+	/**Empty method inherited from abstract class Actor
+	 * @param now time
+	 */
 	@Override
 	public void act(long now) { }
 

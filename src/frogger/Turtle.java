@@ -2,6 +2,7 @@ package frogger;
 
 import javafx.scene.image.Image;
 
+/**Class for turtle objects*/
 public class Turtle extends MovingObjects{
 
 	/**size of turtle*/

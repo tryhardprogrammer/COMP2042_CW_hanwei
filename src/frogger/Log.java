@@ -18,7 +18,7 @@ public class Log extends MovingObjects {
 	}
 
 	/**
-	 * Method to set the speed and direction (speed > 0 is right, speed < 0 is left) of log
+	 * Method to set the speed and direction (speed larger than 0 is right, speed smaller than 0 is left) of log
 	 * @param now time
 	 */
 	@Override

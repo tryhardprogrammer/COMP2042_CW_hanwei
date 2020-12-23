@@ -11,15 +11,17 @@ public class Digit extends Actor{
 	/**Constant size for imageScore*/
 	private final static int sizeImageScore = 30;
 
-	/**Empty method inherited from abstract class Actor*/
+	/**Empty method inherited from abstract class Actor
+	 * @param now time
+	 */
 	@Override
 	public void act(long now) { }
 
 	/**
 	 * Constructor for class Digit
 	 * @param n the number of the digit
-	 * @param x x-coordinate for the placing of Digit
-	 * @param y y-coordinate for the placing of Digit
+	 * @param xpos x-coordinate for the placing of Digit
+	 * @param ypos y-coordinate for the placing of Digit
 	 */
 	public Digit(int n, int xpos, int ypos) {
 		imageScore = new Image("file:src/resources/pictures/digit/"+n+".png", sizeImageScore, sizeImageScore, true, true);

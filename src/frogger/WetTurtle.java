@@ -2,6 +2,7 @@ package frogger;
 
 import javafx.scene.image.Image;
 
+/**Class for wet turtle objects*/
 public class WetTurtle extends MovingObjects {
 
 	/**size of the object*/
@@ -70,18 +71,30 @@ public class WetTurtle extends MovingObjects {
 		return sunk;
 	}
 
+	/**get the image of turtle1
+	 * @return image of turtle1
+	 */
 	public Image getTurtle1() {
 		return turtle1;
 	}
 
+	/**get the image of turtle2
+	 * @return image of turtle2
+	 */
 	public Image getTurtle2() {
 		return turtle2;
 	}
 
+	/**get the image of turtle3
+	 * @return image of turtle3
+	 */
 	public Image getTurtle3() {
 		return turtle3;
 	}
 
+	/**get the image of turtle4
+	 * @return image of turtle4
+	 */
 	public Image getTurtle4() {
 		return turtle4;
 	}

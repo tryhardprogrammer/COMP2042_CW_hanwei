@@ -1,13 +1,16 @@
 package frogger;
 
-
-
+/**Sets up the Menu view*/
 public class Menu extends World{
 
+        /**Initialize play button*/
         Button playButton = new Button("file:src/resources/pictures/button/playbutton.png",120,546, 1);
+        /**Initialize help button*/
         Button helpButton = new Button("file:src/resources/pictures/button/helpbutton.png",307,546, 1);
+        /**Initialize leaderboard button*/
         Button leaderboardButton = new Button("file:src/resources/pictures/button/hsbutton.png", 101, 629,2);
 
+        /**Constructor that adds essential nodes to the scene*/
         public Menu (){
                 BackgroundImage background = new BackgroundImage("file:src/resources/pictures/background/menu.png");
                 add(background);
@@ -29,9 +32,8 @@ public class Menu extends World{
                 });
         }
 
-
+        /**abstract classes inhertied from World*/
         public void createTimer() { }
+        /**abstract classes inhertied from World*/
         public void act(long now){ }
-
-
 }

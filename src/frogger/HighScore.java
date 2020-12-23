@@ -1,49 +1,65 @@
 package frogger;
 
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.TextInputDialog;
-
 import java.io.*;
-import java.util.Optional;
 import java.util.Scanner;
 
+/**Class that controls and responsible for the highscore of the ga,e*/
 public class HighScore {
 
+    /**Array of top 10 highscores*/
     private int[] score = new int[10];
+    /**Array of the players achieving in top 10 highscores */
     private String [] name = new String[10];
-    private int i = 0, temp1 = 0, j = 0;
+
+    /**Counter for for loops*/
+    private int i = 0, j = 0;
+    /**Gets the current score of the player*/
     private int getscore = 0;
+    /**Counters that counts how many highscore exists*/
     private int counter = 0;
+    /**records lowestScore*/
     private int lowestScore = 0;
-    private String nameEntered, temp2;
+
+    /**Current player's name*/
+    private String nameEntered;
+    /**Holds temporary strings*/
+    private String temp2;
+    /**Records a long single String about all the highscore players and their scores*/
     private String leaderboardString;
+    /**String buffers that will make multiple strings into a single string using append*/
     private StringBuffer sb = new StringBuffer();
 
+    /**Highscore textfile directory*/
     private String scoreDirectory = "src/resources/records/inthighscore.txt";
+    /**Names of players textfile directory*/
     private String nameDirectory = "src/resources/records/namehighscore.txt";
 
+    /**For implementing Singleton pattern*/
     private static HighScore highScore;
 
+    /**Constructor that reads the score and name text files*/
     public HighScore(){
         readScoreFile();
         readNameFile();
     }
 
-
+    /**
+     * Checks if the player made into the leaderboard
+     * @param playerScore the player's score
+     * @return boolean value about if player score is smaller lowest score in leaderboard
+     */
     public boolean checkLeaderboard(int playerScore){
         return (playerScore > score[9]);
     }
 
-
+    /**initalize highscore by setting a single string for showing in the alert box and set the lowest score*/
     public void initHighScore(){
 
         setString();
         lowestScore = score[counter-1];
-        System.out.println(leaderboardString);
-
     }
 
+    /**Sets all the player's name and score into a single string*/
     public void setString(){
 
         sb.delete(0, sb.length());
@@ -80,7 +96,7 @@ public class HighScore {
 
 
 
-
+    /**writes score file*/
     public void writeScoreFile() {
         try {
             FileWriter writer = new FileWriter(scoreDirectory);
@@ -100,6 +116,7 @@ public class HighScore {
 
     }
 
+    /**reads score file*/
     public void readScoreFile() {
         try {
             File reader = new File(scoreDirectory);
@@ -133,6 +150,7 @@ public class HighScore {
 
     }
 
+    /**writes name file*/
     public void writeNameFile() {
         try {
             FileWriter writer = new FileWriter(nameDirectory);
@@ -151,6 +169,7 @@ public class HighScore {
 
     }
 
+    /**reads name file*/
     public void readNameFile() {
         try {
             File reader = new File(nameDirectory);
@@ -177,10 +196,16 @@ public class HighScore {
 
     }
 
+    /**get the single string containing all player's name and score
+     * @return the string containing all player's name and score
+     */
     public String getLeaderboardString(){
         return leaderboardString;
     }
 
+    /**
+     * Prevents other classes to initialize this class to acheive Singleton
+     * @return highScore the instance of HighScore*/
     public static HighScore getInstance() {
         if (highScore == null) {
             highScore = new HighScore();
@@ -188,10 +213,16 @@ public class HighScore {
         return highScore;
     }
 
+    /**set the player's name
+     * @param nameEntered player's name
+     */
     public void setNameEntered(String nameEntered) {
         this.nameEntered = nameEntered;
     }
 
+    /**get lowest score in leaderboard
+     * @return the lowest score;
+     */
     public int getLowestScore(){
         return lowestScore;
     }

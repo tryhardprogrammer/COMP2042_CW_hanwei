@@ -4,37 +4,40 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
 
-import java.util.Optional;
-
-
+/**Controls how each level works with AnimationTimer*/
 public class LevelController{
 
+    /**Controls music*/
     private BackgroundMusic music = new BackgroundMusic();
+    /**timer for animation*/
     private AnimationTimer timer;
+    /**current animal in the level*/
     private Animal animal;
+    /**number of levels completed*/
     private int levelCompleted = 0;
-    Scene scene;
-    Stage stage;
+    /**Scene*/
+    private Scene scene;
+    /**the stage of the whole application*/
+    private Stage stage;
+    /**all points added from all levels completed*/
     private int overallPoints = 0;
-    private String nameEntered;
 
-    private HighScore highScore = new HighScore();
+    /**current level that needs to be handle*/
+    private Levels currentLevel;
 
-
-    Levels level1;
-    Level1 test;
-
-    public LevelController() {}
-
+    /**Constructor that gets the application's stage
+     * @param stage application's stage
+     */
     public LevelController(Stage stage){
         this.stage = stage;
     }
 
-
+    /**Creates the animation timer for each level
+     * Handles what to do when player finish the game
+     * Updates score
+     */
     public void createTimer() {
 
         timer = new AnimationTimer() {
@@ -48,14 +51,14 @@ public class LevelController{
                 if (animal.checkFinished()) {
                     overallPoints += animal.getCurrentPoint();
 
-                    if (levelCompleted < 1) {
+                    if (levelCompleted < 4) {
                         ++levelCompleted;
-                        generateLevel(levelCompleted + 1);
+                        initLevel(levelCompleted + 1);
                     } else {
                         System.out.print("STOPP:");
                         music.stopMusic();
                         stop();
-                        level1.stop();
+                        currentLevel.stop();
 
                         if(HighScore.getInstance().checkLeaderboard(overallPoints)){
 
@@ -76,28 +79,28 @@ public class LevelController{
                             alert.show();
                         }
 
-
-
-
                     }
                 }
             }
         };
-
     }
 
 
-
+    /**Starts everything like timer and music*/
     public void start() {
         createTimer();
         timer.start();
         music.playMusic();
     }
 
+    /**stops timer*/
     public void stop() {
         timer.stop();
     }
 
+    /**Handles the score displays
+     * @param n the number that needs to be set
+     */
     public void setNumber(int n) {
         int shift = 0;
 
@@ -105,57 +108,52 @@ public class LevelController{
             int tens  = n / 10;
             int ones = n - tens * 10;
             n = tens;
-            level1.add(new Digit(ones, 560 - shift, 25));
+            currentLevel.add(new Digit(ones, 560 - shift, 25));
             shift+=30;
         }
     }
 
-    public void act(long now) { }
-
-
-    public void generateLevel(int choice) {
+    /**Initialise the desired level
+     * @param choice indicating which level to generate
+     */
+    public void initLevel(int choice) {
 
         if(choice == 1){
-            level1 = new Level1();
-            level1.add(new Digit(0, 560, 25));
-            setLvlScreen(level1);
+            currentLevel = new Level1();
+            currentLevel.add(new Digit(0, 560, 25));
+            setLvlScreen(currentLevel);
             setNumber(0);
-            animal = level1.getAnimal();
+            animal = currentLevel.getAnimal();
             start();
         }
         else {
             switch (choice) {
                 case 2:
-                    level1 = new Level2();
+                    currentLevel = new Level2();
                     break;
                 case 3:
-                    level1 = new Level3();
+                    currentLevel = new Level3();
                     break;
                 case 4:
-                    level1 = new Level4();
+                    currentLevel = new Level4();
                     break;
                 case 5:
-                    level1 = new Level5();
+                    currentLevel = new Level5();
                     break;
             }
             setNumber(overallPoints);
-            setLvlScreen(level1);
-            animal = level1.getAnimal();
+            setLvlScreen(currentLevel);
+            animal = currentLevel.getAnimal();
 
         }
     }
 
+    /**Sets the level screen to stage
+     * @param parent the level object
+     */
     public void setLvlScreen(Parent parent){
         scene = new Scene(parent, 600, 800);
         stage.setScene(scene);
-    }
-
-    public Animal getAnimal(){
-        return animal;
-    }
-
-    public void setAnimal(Animal animal){
-        this.animal = animal;
     }
 
 }
