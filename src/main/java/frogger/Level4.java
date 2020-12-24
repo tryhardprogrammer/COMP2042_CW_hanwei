@@ -5,17 +5,15 @@ public class Level4 extends Levels{
 
     /**speed of the actors*/
     private double speedup = 1.65;
-    /**animal of the current level*/
-    private Animal animal;
 
     /**Constructor that adds all actors into Scene*/
     public Level4() {
 
         getChildren().clear();
 
-        BackgroundImage backgroundImage = new BackgroundImage(4);
+        backgroundImage.setLevelBackgroundImage(4);
         add(backgroundImage);
-        setEnds();
+        addEnd();
 
         add(new Log(3, 150, 0, 166, 0.75*speedup));
         add(new Log(3, 150, 440, 166, 0.75*speedup));
@@ -28,8 +26,7 @@ public class Level4 extends Levels{
         add(new WetTurtle(600, 217, -1*speedup));
         add(new WetTurtle(200, 217, -1*speedup));
 
-        animal = new Animal();
-        add(animal);
+        addAnimal();
 
         add(new Vehicle(1,1, 100, 597, -1*speedup));
         add(new Vehicle(1,1, 250, 597, -1*speedup));
@@ -44,18 +41,6 @@ public class Level4 extends Levels{
         addButton();
     };
 
-    /**get animal actor
-     * @return animal actor
-     */
-    public Animal getAnimal(){
-        return animal;
-    }
 
-    /**set animal actor
-     * @param animal the animal actor
-     */
-    public void setAnimal(Animal animal){
-        this.animal = animal;
-    }
 
 }

@@ -20,7 +20,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="COMP2042_CW_OoiHanWei" target="1.13" />
+      <module name="COMP2042_CW_OoiHanWei" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

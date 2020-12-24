@@ -286,6 +286,10 @@ public class Animal extends Actor {
 		return imgD2;
 	}
 
+	public double getStartX() { return startX;}
+
+	public double getStartY() {return startY;}
+
 	public int getCurrentPoint() {
 		return currentPoint;
 	}

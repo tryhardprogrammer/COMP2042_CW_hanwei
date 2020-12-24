@@ -135,4 +135,18 @@ public class LevelController {
         }
         return levelController;
     }
+
+    /**
+     * get the instance of levelModel (for testing)
+     * @return the instance of levelModel*/
+    public LevelModel getLevelModel(){
+        return levelModel;
+    }
+
+    /**
+     * get the instance of levelHandler (for testing)
+     * @return the instance of levelHandler*/
+    public Levels getLevelHandler(){
+        return levelHandler;
+    }
 }

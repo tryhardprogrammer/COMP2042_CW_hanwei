@@ -20,6 +20,7 @@ public class HighScore {
     /**records lowestScore*/
     private int lowestScore = 0;
 
+
     /**Current player's name*/
     private String nameEntered;
     /**Holds temporary strings*/
@@ -81,6 +82,21 @@ public class HighScore {
         if(counter < 10 && getscore < lowestScore){
             score[counter] = getscore;
             name[counter] = nameEntered;
+            lowestScore = getscore;
+        }
+        else if (counter ==10){
+            for(i = 0; i < counter; i++) {
+                if (getscore > score[i]) {
+                    for (j = counter - 1; j > i; j--) {
+                        score[j] = score[j-1];
+                        name[j] = name[j-1];
+                    }
+                    score[i] = getscore;
+                    name[i] = nameEntered;
+                    break;
+                }
+            }
+            lowestScore = score[counter-1];
         }
         else{
             for(i = 0; i < counter; i++) {
@@ -95,11 +111,13 @@ public class HighScore {
                     name[i] = nameEntered;
                     break;
                 }
+                System.out.println("heyy");
 
             }
+            lowestScore = score[counter];
+            counter++;
         }
-        lowestScore = score[counter];
-        if(counter < 10) {counter++;}   //prevent counter > 10
+
 
         writeNameFile();
         writeScoreFile();
@@ -115,7 +133,7 @@ public class HighScore {
             BufferedWriter outputWriter = new BufferedWriter(writer);
 
 
-            for (i=0; i<9; i++) {
+            for (i=0; i<counter; i++) {
                 outputWriter.write(score[i] + " ");
             }
 
@@ -165,7 +183,7 @@ public class HighScore {
             FileWriter writer = new FileWriter(nameDirectory);
             BufferedWriter outputWriter = new BufferedWriter(writer);
 
-            for (i=0; i<10; i++) {
+            for (i=0; i<counter; i++) {
                 outputWriter.write(name[i] + "\n");
             }
 
@@ -233,4 +251,30 @@ public class HighScore {
     public int getLowestScore(){
         return lowestScore;
     }
+
+    public int [] getScore(){
+        return score;
+    }
+
+    public String [] getName(){
+        return name;
+    }
+
+    public void setScore(int [] score){
+        this.score = score;
+    }
+
+    public void setName(String [] name){
+        this.name = name;
+    }
+
+    public int getCounter(){
+        return counter;
+    }
+
+    public void setCounter(int counter){
+        this.counter = counter;
+    }
+
+
 }

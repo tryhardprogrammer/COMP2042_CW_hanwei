@@ -11,6 +11,13 @@ public class BackgroundImage extends Actor{
 	@Override
 	public void act(long now) { }
 
+	/**
+	 * Empty Constructor
+	 */
+	public BackgroundImage(){
+
+	}
+
 	/**Sets background image for menu, instruction
 	 * @param imageLink the directory for the image
 	 */
@@ -21,7 +28,7 @@ public class BackgroundImage extends Actor{
 	/**Sets background image for levels
 	 * @param choice the desired level's image
 	 */
-	public BackgroundImage(int choice) {
+	public void setLevelBackgroundImage(int choice) {
 		setImage(new Image("file:src/resources/pictures/background/"+choice+".png", 600, 800, false, true));
 	}
 

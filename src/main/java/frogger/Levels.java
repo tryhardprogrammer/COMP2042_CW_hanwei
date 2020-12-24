@@ -9,17 +9,23 @@ import java.util.Optional;
 public class Levels extends World{
 
     /**current animal in game*/
-    private Animal animal;
+    private Animal animal = new Animal();
     /**Back Button*/
     private Button backButtonInGame = new Button("file:src/resources/pictures/button/backingame.png", 515,756,3);
     /**Flag that indicates whether user wants to exit*/
     private boolean exitFlag = false;
-
+    /**Background image of the level*/
+    BackgroundImage backgroundImage = new BackgroundImage();
     /**empty constructor*/
     public Levels () {}
 
-    /**Sets end zones*/
-    public void setEnds(){
+    /**Add animal into scene*/
+    public void addAnimal(){
+        add(animal);
+    }
+
+    /**Add end zones into scene*/
+    public void addEnd(){
         add(new End(13,96));
         add(new End(141,96));
         add(new End(141 + 141-13,96));
@@ -54,6 +60,13 @@ public class Levels extends World{
      */
     public Animal getAnimal(){
         return animal;
+    }
+
+    /**Set animal
+     * @param animal animal that will be set as the Level's animal
+     */
+    public void setAnimal(Animal animal){
+        this.animal = animal;
     }
 
     /**Empty abstract method inherited*/
