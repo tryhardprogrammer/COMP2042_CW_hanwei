@@ -11,7 +11,7 @@ public class Levels extends World{
     /**current animal in game*/
     private Animal animal = new Animal();
     /**Back Button*/
-    private Button backButtonInGame = new Button("file:src/resources/pictures/button/backingame.png", 515,756,3);
+    private Button backButtonInGame = new Button("file:src/main/resources/pictures/button/backingame.png", 515,756,3);
     /**Flag that indicates whether user wants to exit*/
     private boolean exitFlag = false;
     /**Background image of the level*/

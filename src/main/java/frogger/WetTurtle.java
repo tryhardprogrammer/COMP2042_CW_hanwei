@@ -12,13 +12,13 @@ public class WetTurtle extends MovingObjects {
 	private boolean sunk = false;
 
 	/**image of the object*/
-	private Image turtle1 = new Image("file:src/resources/pictures/turtle/TurtleAnimation1.png", size, size, true, true);
+	private Image turtle1 = new Image("file:src/main/resources/pictures/turtle/TurtleAnimation1.png", size, size, true, true);
 	/**image of the object*/
-	private Image turtle2 = new Image("file:src/resources/pictures/turtle/TurtleAnimation2Wet.png", size, size, true, true);
+	private Image turtle2 = new Image("file:src/main/resources/pictures/turtle/TurtleAnimation2Wet.png", size, size, true, true);
 	/**image of the object*/
-	private Image turtle3 = new Image("file:src/resources/pictures/turtle/TurtleAnimation3Wet.png", size, size, true, true);
+	private Image turtle3 = new Image("file:src/main/resources/pictures/turtle/TurtleAnimation3Wet.png", size, size, true, true);
 	/**image of the object*/
-	private Image turtle4 = new Image("file:src/resources/pictures/turtle/TurtleAnimation4Wet.png", size, size, true, true);
+	private Image turtle4 = new Image("file:src/main/resources/pictures/turtle/TurtleAnimation4Wet.png", size, size, true, true);
 
 
 	/**Constructor for vehicle

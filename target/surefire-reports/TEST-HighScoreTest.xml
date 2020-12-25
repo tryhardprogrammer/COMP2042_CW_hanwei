@@ -59,6 +59,6 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="HighScoreTest" name="testScoreSequence" time="0.004"/>
-  <testcase classname="HighScoreTest" name="testUpdateLowerScore" time="0.001"/>
+  <testcase classname="HighScoreTest" name="testScoreSequence" time="0.003"/>
+  <testcase classname="HighScoreTest" name="testUpdateLowerScore" time="0.002"/>
 </testsuite>

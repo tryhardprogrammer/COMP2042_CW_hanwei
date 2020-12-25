@@ -9,11 +9,11 @@ public class Turtle extends MovingObjects{
 	private int size = 130;
 
 	/**image of the object*/
-	private Image turtle1 = new Image("file:src/resources/pictures/turtle/TurtleAnimation1.png", size, size, true, true);
+	private Image turtle1 = new Image("file:src/main/resources/pictures/turtle/TurtleAnimation1.png", size, size, true, true);
 	/**image of the object*/
-	private Image turtle2 = new Image("file:src/resources/pictures/turtle/TurtleAnimation2.png", size, size, true, true);
+	private Image turtle2 = new Image("file:src/main/resources/pictures/turtle/TurtleAnimation2.png", size, size, true, true);
 	/**image of the object*/
-	private Image turtle3 = new Image("file:src/resources/pictures/turtle/TurtleAnimation3.png", size, size, true, true);
+	private Image turtle3 = new Image("file:src/main/resources/pictures/turtle/TurtleAnimation3.png", size, size, true, true);
 
 
 	/**Constructor for vehicle

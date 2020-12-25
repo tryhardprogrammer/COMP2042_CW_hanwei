@@ -21,12 +21,9 @@ public class Main extends Application {
 
 		ScreenController.getInstance().setStage(primaryStage);
 		primaryStage.setTitle("Frogger!");
-		primaryStage.getIcons().add(new Image("file:src/resources/pictures/background/logo.png"));
+		primaryStage.getIcons().add(new Image("file:src/main/resources/pictures/background/logo.png"));
 		ScreenController.getInstance().MenuScreen();
 		primaryStage.show();
-
-
-
 
 	}
 

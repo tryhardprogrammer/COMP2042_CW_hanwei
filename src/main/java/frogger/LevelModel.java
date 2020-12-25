@@ -1,10 +1,6 @@
 package frogger;
 
-import javafx.animation.AnimationTimer;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.stage.Stage;
+import javafx.animation.AnimationTimer; 
 
 /**Model, which is the logical part for every level*/
 public class LevelModel {

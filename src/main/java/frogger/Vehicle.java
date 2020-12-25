@@ -26,13 +26,13 @@ public class Vehicle extends MovingObjects{
 		super(xpos, ypos, s);
 
 		if(typeofcar == 1){
-			setImage(new Image("file:src/resources/pictures/car/car"+leftorright+".png", carsize, carsize, true, true));
+			setImage(new Image("file:src/main/resources/pictures/car/car"+leftorright+".png", carsize, carsize, true, true));
 		}
 		else if(typeofcar == 2){
-			setImage(new Image("file:src/resources/pictures/truck/truck1"+leftorright+".png", truck1size, truck1size, true, true));
+			setImage(new Image("file:src/main/resources/pictures/truck/truck1"+leftorright+".png", truck1size, truck1size, true, true));
 		}
 		else if(typeofcar == 3){
-			setImage(new Image("file:src/resources/pictures/truck/truck2"+leftorright+".png", truck2size, truck2size, true, true));
+			setImage(new Image("file:src/main/resources/pictures/truck/truck2"+leftorright+".png", truck2size, truck2size, true, true));
 		}
 
 	}

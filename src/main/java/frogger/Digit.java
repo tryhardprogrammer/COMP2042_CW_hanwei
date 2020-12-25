@@ -24,7 +24,7 @@ public class Digit extends Actor{
 	 * @param ypos y-coordinate for the placing of Digit
 	 */
 	public Digit(int n, int xpos, int ypos) {
-		imageScore = new Image("file:src/resources/pictures/digit/"+n+".png", sizeImageScore, sizeImageScore, true, true);
+		imageScore = new Image("file:src/main/resources/pictures/digit/"+n+".png", sizeImageScore, sizeImageScore, true, true);
 		setImage(imageScore);
 		setX(xpos);
 		setY(ypos);

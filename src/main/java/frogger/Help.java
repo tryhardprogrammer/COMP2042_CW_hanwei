@@ -6,11 +6,11 @@ import javafx.stage.Stage;
 public class Help extends World{
 
     /**Initialize back button*/
-    Button backButton = new Button("file:src/resources/pictures/button/backbutton.png",207,716, 1);
+    Button backButton = new Button("file:src/main/resources/pictures/button/backbutton.png",207,716, 1);
 
     /**Constructor that adds essential nodes to the scene*/
     public Help ( ){
-        BackgroundImage background = new BackgroundImage("file:src/resources/pictures/background/help.png");
+        BackgroundImage background = new BackgroundImage("file:src/main/resources/pictures/background/help.png");
         add(background);
         add(backButton);
 

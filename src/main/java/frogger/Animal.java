@@ -13,7 +13,7 @@ public class Animal extends Actor {
 	/**current points the player holds*/
 	private int currentPoint = 0;
 	/**records number of ends the user had reached*/
-	private int end = 0;
+	private int end = 4;
 	/**counter for executing animation*/
 	private int animationCounter = 0;
 	/**records furthest position the character had reached before reaching a end zone*/
@@ -44,21 +44,21 @@ public class Animal extends Actor {
 	private boolean noMove = false;
 
 	/**image of the frog's moving forward*/
-	private Image imgW1 = new Image("file:src/resources/pictures/frogger/froggerUp.png", imgSize, imgSize, true, true);
+	private Image imgW1 = new Image("file:src/main/resources/pictures/frogger/froggerUp.png", imgSize, imgSize, true, true);
 	/**image of the frog's moving left*/
-	private Image imgA1 = new Image("file:src/resources/pictures/frogger/froggerLeft.png", imgSize, imgSize, true, true);
+	private Image imgA1 = new Image("file:src/main/resources/pictures/frogger/froggerLeft.png", imgSize, imgSize, true, true);
 	/**image of the frog's moving backwards*/
-	private Image imgS1 = new Image("file:src/resources/pictures/frogger/froggerDown.png", imgSize, imgSize, true, true);
+	private Image imgS1 = new Image("file:src/main/resources/pictures/frogger/froggerDown.png", imgSize, imgSize, true, true);
 	/**image of the frog's moving right*/
-	private Image imgD1 = new Image("file:src/resources/pictures/frogger/froggerRight.png", imgSize, imgSize, true, true);
+	private Image imgD1 = new Image("file:src/main/resources/pictures/frogger/froggerRight.png", imgSize, imgSize, true, true);
 	/**image of the frog's jumping forward*/
-	private Image imgW2 = new Image("file:src/resources/pictures/frogger/froggerUpJump.png", imgSize, imgSize, true, true);
+	private Image imgW2 = new Image("file:src/main/resources/pictures/frogger/froggerUpJump.png", imgSize, imgSize, true, true);
 	/**image of the frog's jumping left*/
-	private Image imgA2 = new Image("file:src/resources/pictures/frogger/froggerLeftJump.png", imgSize, imgSize, true, true);
+	private Image imgA2 = new Image("file:src/main/resources/pictures/frogger/froggerLeftJump.png", imgSize, imgSize, true, true);
 	/**image of the frog's jumping backwards*/
-	private Image imgS2 = new Image("file:src/resources/pictures/frogger/froggerDownJump.png", imgSize, imgSize, true, true);
+	private Image imgS2 = new Image("file:src/main/resources/pictures/frogger/froggerDownJump.png", imgSize, imgSize, true, true);
 	/**image of the frog's jumping right*/
-	private Image imgD2 = new Image("file:src/resources/pictures/frogger/froggerRightJump.png", imgSize, imgSize, true, true);
+	private Image imgD2 = new Image("file:src/main/resources/pictures/frogger/froggerRightJump.png", imgSize, imgSize, true, true);
 
 	/**Constructor for class Animal
 	 * initialize image of the Animal object and starting point
@@ -192,7 +192,7 @@ public class Animal extends Actor {
 				setAnimationCounter(getAnimationCounter() + 1);
 			}
 			if (getAnimationCounter() ==1 || getAnimationCounter() ==2 || getAnimationCounter() ==3) {
-				setImage(new Image("file:src/resources/pictures/death/cardeath"+ getAnimationCounter() +".png", imgSize, imgSize, true, true));
+				setImage(new Image("file:src/main/resources/pictures/death/cardeath"+ getAnimationCounter() +".png", imgSize, imgSize, true, true));
 			}
 			if (getAnimationCounter() == 4) {
 				resetPos();
@@ -211,7 +211,7 @@ public class Animal extends Actor {
 				setAnimationCounter(getAnimationCounter() + 1);
 			}
 			if (getAnimationCounter() ==1 || getAnimationCounter() ==2 || getAnimationCounter() ==3 || getAnimationCounter() ==4)  {
-				setImage(new Image("file:src/resources/pictures/death/waterdeath"+ getAnimationCounter() +".png", imgSize,imgSize , true, true));
+				setImage(new Image("file:src/main/resources/pictures/death/waterdeath"+ getAnimationCounter() +".png", imgSize,imgSize , true, true));
 			}
 			if (getAnimationCounter() == 5) {
 				resetPos();

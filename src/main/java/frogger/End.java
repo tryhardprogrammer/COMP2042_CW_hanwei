@@ -19,18 +19,18 @@ public class End extends Actor{
 	public End(int x, int y) {
 		setX(x);
 		setY(y);
-		setImage(new Image("file:src/resources/pictures/end/End.png", 60, 60, true, true));
+		setImage(new Image("file:src/main/resources/pictures/end/End.png", 60, 60, true, true));
 	}
 
 	/**Sets unactivated End to activated End when the goal is reached*/
 	public void activateEnd() {
-		setImage(new Image("file:src/resources/pictures/end/FrogEnd.png", 70, 70, true, true));
+		setImage(new Image("file:src/main/resources/pictures/end/FrogEnd.png", 70, 70, true, true));
 		activated = true;
 	}
 
 	/**Sets activated End to unactivated End when reset is needed*/
 	public void unactivateEnd(){
-		setImage(new Image("file:src/resources/pictures/end/End.png", 60, 60, true, true));
+		setImage(new Image("file:src/main/resources/pictures/end/End.png", 60, 60, true, true));
 		activated = false;
 	}
 

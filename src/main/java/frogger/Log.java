@@ -14,7 +14,7 @@ public class Log extends MovingObjects {
 	 */
 	public Log(int choice, int size, int xpos, int ypos, double s) {
 		super(xpos, ypos, s);
-		setImage(new Image("file:src/resources/pictures/log/log"+choice+".png", size,size, true, true));
+		setImage(new Image("file:src/main/resources/pictures/log/log"+choice+".png", size,size, true, true));
 	}
 
 	/**

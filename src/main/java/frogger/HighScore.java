@@ -31,9 +31,9 @@ public class HighScore {
     private StringBuffer sb = new StringBuffer();
 
     /**Highscore textfile directory*/
-    private String scoreDirectory = "src/resources/records/inthighscore.txt";
+    private String scoreDirectory = "src/main/resources/records/inthighscore.txt";
     /**Names of players textfile directory*/
-    private String nameDirectory = "src/resources/records/namehighscore.txt";
+    private String nameDirectory = "src/main/resources/records/namehighscore.txt";
 
     /**For implementing Singleton pattern*/
     private static HighScore highScore;
@@ -83,6 +83,7 @@ public class HighScore {
             score[counter] = getscore;
             name[counter] = nameEntered;
             lowestScore = getscore;
+            counter++;
         }
         else if (counter ==10){
             for(i = 0; i < counter; i++) {
