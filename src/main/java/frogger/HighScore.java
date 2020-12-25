@@ -253,26 +253,45 @@ public class HighScore {
         return lowestScore;
     }
 
+    /**get score array in leaderboard
+     * @return the score array;
+     */
     public int [] getScore(){
         return score;
     }
 
+    /**get name array in leaderboard
+     * @return the name array;
+     */
     public String [] getName(){
         return name;
     }
 
-    public void setScore(int [] score){
-        this.score = score;
-    }
 
-    public void setName(String [] name){
-        this.name = name;
-    }
-
+    /**get counter in leaderboard
+     * @return counter;
+     */
     public int getCounter(){
         return counter;
     }
 
+    /**get score array in leaderboard
+     * @param score arrays of scores
+     */
+    public void setScore(int [] score){
+        this.score = score;
+    }
+
+    /**get name array in leaderboard
+     * @param name arrays of name
+     */
+    public void setName(String [] name){
+        this.name = name;
+    }
+
+    /**get counter
+     * @param counter counter
+     */
     public void setCounter(int counter){
         this.counter = counter;
     }

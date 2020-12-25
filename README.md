@@ -5,11 +5,14 @@ Code from github user hirish99.
  #### Organising Files
  Separated all resources like images and text files away from the source codes.
  
- #### Breaking adn Cleaning up Classes
+ #### Breaking and Cleaning up Classes
  Some classes from hirish99's source codes were broken up to different classes. This is to make the classes to follow the Single Responsibility Principle.
  
  For example, class MyStage from hirish99 is responsible for initializing the game timer and the background music. In this source code, it has been broken up into class BackgroundMusic and Levels, where the former is reponsible for only the background music(without inheriting the class World), while the latter is a Parent class for all levels created which is responsible for the stage timer and the structure of the game.
  
+ #### Added new Classes
+ Added new classes to increase the modularity or add features of the program. For example, Classes like Menu, Help, Level1, Level2, Level3, Level4, Level5 are like views in the MVC model. The class HighScore is also a class which specifically in charge of the high scores.
+
  #### Encapsulation
  All variables for every classes has been encapsulated by setting them to private instead of public. Classes getting and setting data from other classes must use get and set methods.
 
@@ -52,3 +55,18 @@ Code from github user hirish99.
   #### JUnit
   Added 2 test class, where both of them together contains 5 test cases.
   
+## Game Rules
+Press 'Play' in the Menu to start the game. There are 5 levels total, where each level will get much more difficult. 
+Player will need to finish their current stage in order to proceed to the next one. 
+
+## Running the program
+### Download JavaFX before running!
+#### Option 1
+- 1. Import project into your IDE
+- 2. Run maven clean -> maven build
+
+#### Option 2
+- 1. Import new Java FX project into your IDE
+- 2. Select Run Configurations of the project
+- 3. Type --module-path "D:<path>" --add-modules=ALL-MODULE-PATH in VM arguments, where path is your location for javafx-sdk\lib.
+- 4. Run.

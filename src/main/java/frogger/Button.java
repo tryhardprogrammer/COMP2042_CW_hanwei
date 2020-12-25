@@ -5,8 +5,6 @@ import javafx.scene.image.Image;
 /**Buttons for Menu, Help*/
 public class Button extends Actor{
 
-    /**Selects which size of buttons to create*/
-    private int choice;
 
     /**Initialize buttons
      * @param imageLink image directory
@@ -16,7 +14,6 @@ public class Button extends Actor{
      */
     public Button (String imageLink, int xpos, int ypos, int choice){
 
-        this.choice = choice;
 
         //play, help, back button
         if(choice == 1){
