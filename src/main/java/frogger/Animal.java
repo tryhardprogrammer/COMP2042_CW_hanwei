@@ -13,7 +13,7 @@ public class Animal extends Actor {
 	/**current points the player holds*/
 	private int currentPoint = 0;
 	/**records number of ends the user had reached*/
-	private int end = 4;
+	private int end = 0;
 	/**counter for executing animation*/
 	private int animationCounter = 0;
 	/**records furthest position the character had reached before reaching a end zone*/
